@@ -6,7 +6,7 @@ const ChartCard = (props) => {
     const {data} = props;
     
     return(
-        <Card sx={{ width: 600 }}>
+        <Card>
             <CardContent>
                 <MultiChart data={data}/>
             </CardContent>

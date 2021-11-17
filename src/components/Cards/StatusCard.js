@@ -44,7 +44,7 @@ const data = [
 
 const StatusCard = (props) => {
   return (
-    <Card sx={{ width: 550, height: 600, overflow: "auto" }}>
+    <Card sx={{ margin:"auto", maxWidth: 550, maxHeight: 600, overflow: "auto" }}>
       <Typography
         gutterBottom
         component="div"
