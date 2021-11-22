@@ -39,22 +39,22 @@ const data = [
       Second: 23,
       Millisecond: 22,
     },
-  }
+  },
 ];
 
 const StatusCard = (props) => {
   return (
-    <Card sx={{ margin:"auto", maxWidth: 550, maxHeight: 600, overflow: "auto" }}>
-      <Typography
-        gutterBottom
-        component="div"
-        sx={{ marginTop: 3, fontSize: 20, fontWeight: "bolder" }}
-        variant="button"
-        align="center"
-      >
-        General Information
-      </Typography>
-      <CardContent>
+    <Card sx={{ maxWidth: 550,  }}>
+      <CardContent sx={{ maxHeight: 600, overflow: "auto" }}>
+        <Typography
+          gutterBottom
+          component="div"
+          sx={{ marginTop: 3, fontSize: 20, fontWeight: "bolder" }}
+          variant="button"
+          align="center"
+        >
+          General Information
+        </Typography>
         {data?.map((e) => (
           <StatusInfo name={e.name} Icon={e.Icon} info={e.info} />
         ))}

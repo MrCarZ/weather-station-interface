@@ -6,7 +6,7 @@ import DateTimePicker from "@mui/lab/DateTimePicker";
 
 const dateTimePickerStyles = {
   style: {
-    maxWidth: 200,
+    maxWidth: 250,
     fontSize: "0.9rem",
   },
 };
@@ -19,7 +19,7 @@ const CSVCard = (props) => {
   return (
     <Card>
       <CardContent>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} sx={{justifyContent:"space-evenly"}}>
           <Grid item sx={5}>
             <DateTimePicker
               label="From:"
