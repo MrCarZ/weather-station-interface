@@ -1,7 +1,8 @@
 import React from "react";
-import { ChartCard, StatusCard } from "../components/Cards";
+import { ChartCard, StatusCard, CSVCard } from "../components/Cards";
 import { Grid } from "@mui/material";
-const Home = (props, children) => {
+
+const Home = (props) => {
   return (
     <>
       <Grid container columns={12} spacing={0}>
@@ -9,20 +10,17 @@ const Home = (props, children) => {
           container
           item
           xs={6}
+          spacing={2}
           sx={{
             margin: "auto",
             maxWidth: 550,
-            overflow: "auto",
           }}
         >
           <Grid item xs={12}>
-            LPDA Weather Station
+            <ChartCard sx={{ height: 500 }} data={props.data} />
           </Grid>
           <Grid item xs={12}>
-            <ChartCard data={props.data} />
-          </Grid>
-          <Grid item xs={12}>
-            Botão
+            <CSVCard />
           </Grid>
         </Grid>
         <Grid item xs={6}>
