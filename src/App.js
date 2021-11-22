@@ -1,7 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import socketio from "socket.io-client";
 import Home from './pages/Home';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 const data = {
   labels: ["1", "2", "3", "4", "5", "6"],
@@ -37,7 +38,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Home data={data}/>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <Home data={data}/>
+        </LocalizationProvider>
       </header>
     </div>
   );
