@@ -1,14 +1,28 @@
-import React from "react";
-import config from '../chart/config';
+import React, { useContext } from "react";
+import config from "../chart/config";
 import { Line } from "react-chartjs-2";
+import {WeatherStationContext} from '../contexts/weatherStationContext';
 
+const MultiChart = () => {
+  const {weatherData} = useContext(WeatherStationContext);
 
-const MultiChart = (props) => {
-  const options = {data: props.data, ...config };
-  console.log(options);
+  const xAxis = weatherData.timestamp;
+  const yAxis = Object.keys(weatherData).map((value) => {
+    if (value !== "timestamp") {
+      return weatherData[value];
+    }
+  });
+
+  const data = {
+    labels: xAxis,
+    datasets: yAxis,
+  };
+
+  const options = { data: data, ...config };
+  
   return (
     <>
-      <Line data={props.data} options={options} />
+      <Line data={data} options={options} />
     </>
   );
 };

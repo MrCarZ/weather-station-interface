@@ -20,7 +20,7 @@ const Home = (props) => {
             <Typography variant="h3"> LPDA Weather Station </Typography>
           </Grid>
           <Grid item xs={12}>
-            <ChartCard data={props.data} />
+            <ChartCard />
           </Grid>
           <Grid item xs={12}>
             <CSVCard />

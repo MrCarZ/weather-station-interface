@@ -2,13 +2,11 @@ import React from 'react';
 import MultiChart from '../MultiChart';
 import { Card, CardContent } from '@mui/material';
 
-const ChartCard = (props) => {
-    const {data} = props;
-    
+const ChartCard = () => {
     return(
         <Card>
             <CardContent>
-                <MultiChart data={data}/>
+                <MultiChart/>
             </CardContent>
         </Card>
     )
