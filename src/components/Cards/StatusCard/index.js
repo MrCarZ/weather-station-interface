@@ -50,28 +50,26 @@ const StatusCard = () => {
   const [chartData, setChartData] = useState(dataTemplate);
 
   useEffect(() => {
-    const data = dataTemplate.map(
-      (value) => {
-        const { last, min, max, day } = getInfoStats(value.type);
-        if (value.type !== "lightningStrike") {
-          const newInfo = {
-            "Last Measure": last,
-            "Max (Last 24h)": max,
-            "Min (Last 24h)": min,
-          };
-          return {
-            ...value,
-            info: newInfo,
-          };
-        }
-        // TODO: Fix bug regarding lightning strike data
-
-        return { ...value, info: { Day: day } };
-      },
-      [weatherData]
-    );
+    const data = dataTemplate.map((value) => {
+      const { last, min, max, day } = getInfoStats(value.type);
+      if (value.type !== "lightningStrike") {
+        const newInfo = {
+          "Last Measure": last,
+          "Max (Last 24h)": max,
+          "Min (Last 24h)": min,
+        };
+        return {
+          ...value,
+          info: newInfo,
+        };
+      }
+      
+      return { ...value, info: { Day: day } };
+    });
     setChartData(data);
   }, [weatherData]);
+
+
 
   return (
     <Card sx={{ maxWidth: 550 }}>

@@ -1,4 +1,5 @@
 const config = {
+  spanGaps: true,
   type: "line",
   scales: {
     y1: {

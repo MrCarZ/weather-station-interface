@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { List, ListItem, ListItemText } from "@mui/material";
 
 const StatusInfo = (props) => {
   const { name, info, Icon } = props;
-  const keys = Object.keys(info);
+  const [statusInfo, setStatusInfo] = useState(info);
+
+  useEffect(() => {
+    setStatusInfo(info);
+  }, [info]);
 
   return (
     <>
@@ -18,13 +22,13 @@ const StatusInfo = (props) => {
             }}
           />
         </ListItem>
-        {keys.map((key) => {
+        {Object.keys(statusInfo).map((key) => {
           return (
             <ListItem
               key={`${name}-${key}`}
               secondaryAction={
                 <ListItemText
-                  primary={info[key]}
+                  primary={statusInfo[key]}
                   primaryTypographyProps={{
                     variant: "overline",
                     fontSize: "13px",
