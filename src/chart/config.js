@@ -2,6 +2,12 @@ const config = {
   spanGaps: true,
   type: "line",
   scales: {
+    x: {
+      /* configuration to change labels presentation */
+      ticks:{
+        maxTicksLimit: 24 
+      }
+    },
     y1: {
       position: "left",
       display: true,
