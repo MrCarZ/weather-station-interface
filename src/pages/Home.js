@@ -22,9 +22,6 @@ const Home = (props) => {
           <Grid item xs={12}>
             <ChartCard />
           </Grid>
-          <Grid item xs={12}>
-            <CSVCard />
-          </Grid>
         </Grid>
         <Grid item xs={4} sx={{margin: "auto"}}>
           <StatusCard />

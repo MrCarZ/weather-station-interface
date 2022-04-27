@@ -4,8 +4,8 @@ import { Card, CardContent } from '@mui/material';
 
 const ChartCard = () => {
     return(
-        <Card>
-            <CardContent>
+        <Card sx={{height: "600px"}}>
+            <CardContent sx={{height: "90%"}}>
                 <MultiChart/>
             </CardContent>
         </Card>

@@ -35,6 +35,7 @@ const dataTemplate = [
       "Min (Last 24h)": 0,
     },
   },
+  /*
   {
     type: "lightningStrike",
     name: "Last Lightning Strike",
@@ -43,6 +44,7 @@ const dataTemplate = [
       Day: new Date().toDateString(),
     },
   },
+  */
 ];
 
 const StatusCard = () => {
